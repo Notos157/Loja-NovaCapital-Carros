@@ -135,21 +135,14 @@ body {
     justify-content: center;
 }
 
-/* PREÇOS (VITRINE E MODAL) */
+/* PREÇOS */
 .price-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centralizado por padrão na vitrine */
+    justify-content: center;
     gap: 8px;
     margin-top: auto; 
     margin-bottom: 12px;
-}
-
-/* Ajuste específico para que o container de preço alinhe à esquerda no modal */
-.box .price-container {
-    justify-content: flex-start;
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
 
 .price-old {
@@ -183,7 +176,7 @@ body {
 }
 
 /* ==========================================================================
-   5. MODAIS E AJUSTE DE LISTAS EM TÓPICOS
+   5. MODAIS E AJUSTE DE LISTAS EM TÓPICOS (PRINT DO USUÁRIO)
    ========================================================================== */
 .modal {
     display: none;
@@ -272,17 +265,10 @@ body {
     cursor: pointer;
     width: 100%;
     text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-    transition: background 0.2s ease;
-}
-
-.buy-btn:hover {
-    background: #e64d00;
 }
 
 /* ==========================================================================
-   6. RESPONSIVIDADE
+   6. RESPONSIVIDADE (APENAS ESTA SEÇÃO FOI ALTERADA PARA O MOBILE)
    ========================================================================== */
 @media (max-width: 768px) {
     .banner-topo {
@@ -310,13 +296,26 @@ body {
         white-space: nowrap;
     }
 
+    /* FORÇA 2 COLUNAS DE PRODUTOS NO CELULAR */
     .grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px; 
     }
 
+    /* Ajustes leves de tamanho para os cards caberem lado a lado no celular */
     .card {
         height: auto; 
+        padding: 15px 10px;
+    }
+
+    .card img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .card h3 {
+        font-size: 0.9em;
+        min-height: 38px;
     }
 
     .box {
